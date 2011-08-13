@@ -1,0 +1,9 @@
+12345678901234567890123456789012345678901234567890123456789012345678901234567890
+---------|---------|---------|---------|---------|---------|---------|---------|
+
+                          ssh-gnome-keyring-connection
+                         ------------------------------
+
+	ssh-gnome-keyring-connection allows the user to automatically add keys
+to the ssh-agent upon logging in without to type in the passphrases. The
+passphrases are stored and retrieved from the GNOME Keyring.
