@@ -8,6 +8,11 @@
 to the ssh-agent upon logging in without to type in the passphrases. The
 passphrases are stored and retrieved from the GNOME Keyring.
 
+                                  Code Status
+                                 -------------
+
+1 - Experimental
+
                                  Prerequisites
                                 ---------------
 
@@ -15,6 +20,13 @@ The following packages are required to build ssh-gnome-keyring-connection:
 
 libglib2.0-dev
 libgnome-keyring-dev
+
+                                    Authors
+                                   ---------
+
+Linard Verstraete
+
+NickStallman.net (Creator of relevant HowTo on Gentoo Wiki)
 
                                     License
                                    ---------
