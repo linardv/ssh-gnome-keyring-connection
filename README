@@ -7,3 +7,10 @@
 	ssh-gnome-keyring-connection allows the user to automatically add keys
 to the ssh-agent upon logging in without to type in the passphrases. The
 passphrases are stored and retrieved from the GNOME Keyring.
+
+                                    License
+                                   ---------
+
+The source code is provided in the PUBLIC DOMAIN, AS-IS, without warranty.
+Original code was found on Gentoo Wiki Archives:
+http://www.gentoo-wiki.info/HOWTO_Use_gnome-keyring_to_store_SSH_passphrases

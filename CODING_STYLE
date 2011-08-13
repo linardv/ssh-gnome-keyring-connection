@@ -1,0 +1,8 @@
+- Coding style: tabs for indentation, spaces for alignment
+                More info: http://www.emacswiki.org/emacs/SmartTabs
+
+- Indent style: 1TBS
+
+- Naming convention: lower_snake_case
+
+- An empty line at the end of a file
