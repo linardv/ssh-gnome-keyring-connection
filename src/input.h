@@ -3,6 +3,6 @@
 
 #include "definitions.h"
 
-void process_arguments(int argc, char * argv[], Mode * mode);
+void process_arguments(int argc, char * argv[], Mode * mode, char ** name);
 
 #endif // INPUT_H_

@@ -4,22 +4,43 @@
                           ssh-gnome-keyring-connection
                          ------------------------------
 
-	ssh-gnome-keyring-connection allows the user to automatically add keys
-to the ssh-agent upon logging in without to type in the passphrases. The
-passphrases are stored and retrieved from the GNOME Keyring.
+ssh-gnome-keyring-connection allows the user to automatically add keys to the
+ssh-agent upon logging in without to type in the passphrases. The passphrases
+are stored and retrieved from the GNOME Keyring.
+
+                                     Usage
+                                    -------
+
+Usage:
+    ssh-gnome-keyring-conncetion <mode> <name>
+
+Parameters:
+    mode  - either 'get' or 'set' (without quotes)
+    name  - a name to identify the key
+
+Notes:
+    If mode is 'get', then the password is dumped to stdout.
+    If mode is 'set', then the password is read from stdin.
 
                                   Code Status
                                  -------------
 
-1 - Experimental
+1 - Experimental, incompleted
 
                                  Prerequisites
                                 ---------------
 
 The following packages are required to build ssh-gnome-keyring-connection:
 
+build-essential
 libglib2.0-dev
 libgnome-keyring-dev
+
+                                     Bugs
+                                    ------
+
+All patches, bug reports, questions or sugguestions are most welcome and can be reported at:
+https://github.com/linardv/ssh-gnome-keyring-connection/issues
 
                                     Authors
                                    ---------

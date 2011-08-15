@@ -6,18 +6,23 @@
 
 #include "definitions.h"
 #include "input.h"
+#include "connector-keyring.h"
 
 int main(int argc, char * argv[]) {
+	char * name;
 	Mode mode;
 
 	g_set_application_name(APPLICATION_NAME);
 
-	process_arguments(argc, argv, &mode);
+	process_arguments(argc, argv, &mode, &name);
 
 	if(mode == MODE_GET) {
-		fprintf(stdout, "W: Mode \"get\" isn't implemented yet.\n");
+		get_password(name);
 	} else if (mode == MODE_SET) {
-		fprintf(stdout, "W: Mode \"set\" isn't implemented yet.\n");
+		set_password(name);
+	} else {
+		fprintf(stderr, "E: Could not determine which mode. (Assert false)");
+		exit(EXIT_FAILURE);
 	}
 
 	return EXIT_SUCCESS;
