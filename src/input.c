@@ -7,13 +7,13 @@
 
 void print_usage() {
 	puts("Usage:\n"
-	     "    APPLICATION_NAME <mode> <name>\n"
+	     "    ssh-kc <mode> <name>\n"
 	     "Parameters:\n"
 	     "    mode     - either 'get' or 'set' (without quotes)\n"
 	     "    name     - a name to identify the key\n"
 	     "Notes:\n"
-	     "    If mode is 'get', then the password is dumped to stdout.\n"
-	     "    If mode is 'set', then the password is read from stdin.\n");
+	     "    If mode is 'get', then the passphrase is dumped to stdout.\n"
+	     "    If mode is 'set', then the passphrase is read from stdin.\n");
 }
 
 void process_arguments(int argc, char * argv[], Mode * mode, char ** name) {

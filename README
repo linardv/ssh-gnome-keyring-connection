@@ -4,28 +4,38 @@
                           ssh-gnome-keyring-connection
                          ------------------------------
 
-ssh-gnome-keyring-connection allows the user to automatically add keys to the
-ssh-agent upon logging in without to type in the passphrases. The passphrases
-are stored and retrieved from the GNOME Keyring.
+ssh-gnome-keyring-connection (in short, ssh-kc) allows the user to
+automatically add keys to the ssh-agent upon logging in without to type in the
+passphrases. The passphrases are stored and retrieved from the GNOME Keyring.
 
                                      Usage
                                     -------
 
 Usage:
-    ssh-gnome-keyring-conncetion <mode> <name>
-
+    ssh-kc <mode> <name>
 Parameters:
-    mode  - either 'get' or 'set' (without quotes)
-    name  - a name to identify the key
+    mode     - 'set' (without quotes)
+    name     - a name to identify the key
 
-Notes:
-    If mode is 'get', then the password is dumped to stdout.
-    If mode is 'set', then the password is read from stdin.
+For more information see:
+    ssh-kc -h
+
+Add your passphrase to the GNOME Keyring by feeding it on stdin to ssh-kc.
+There are several way to do this, one of them is:
+echo -n "mypassphrase" | ssh-kc set default-key
+
+Add the '${HOME}/.ssh-kc/ssh-kc-autorun.sh' script to the applications your
+session manager (e.g: gnome-session, xfce4-session, ...) would start when you
+log in. Your ssh-key will be loaded the next time you log in.
+
+For more information on how to add multiple keys or keys that are not placed on
+the default location see the scripts in:
+'${HOME}/.ssh-kc'
 
                                   Code Status
                                  -------------
 
-1 - Experimental, incompleted
+1 - Experimental
 
                                  Prerequisites
                                 ---------------
@@ -36,10 +46,43 @@ build-essential
 libglib2.0-dev
 libgnome-keyring-dev
 
+To run the application you need ofcourse a running instance of a ssh-agent and
+a running instance of the GNOME Keyring manager.
+
+                              Building & Installing
+                             -----------------------
+
+1. Build the application from source by running:
+
+make build
+
+2. Install the application with administration privileges (sudo or root)
+   by running:
+
+make install
+
+3. Add the scripts needed to autostart the application when logging in
+   by running:
+
+make install-defaults
+
+                                 Uninstalling
+                                --------------
+
+1. Uninstall the application with administration privileges (sudo or root)
+   by running:
+
+make uninstall
+
+2. (Optional) Remove all scripts and settings in ${HOME}/.ssh-kc by running:
+
+make purge
+
                                      Bugs
                                     ------
 
-All patches, bug reports, questions or sugguestions are most welcome and can be reported at:
+All patches, bug reports, questions or sugguestions are most welcome and can be
+reported at:
 https://github.com/linardv/ssh-gnome-keyring-connection/issues
 
                                     Authors
