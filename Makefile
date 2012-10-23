@@ -1,9 +1,11 @@
+LIBS = gnome-keyring-1 glib-2.0
 CC = gcc
-CCFLAGS = -Wall -Wextra -O3 `pkg-config --cflags --libs gnome-keyring-1 glib-2.0` -o ssh-kc
+CCFLAGS = -Wall -Wextra -O3 `pkg-config --cflags $(LIBS)` -o ssh-kc
+CCLIBS = `pkg-config --libs $(LIBS)`
 BASE_INSTALL = /usr/local/bin
 
 build:
-	$(CC) $(CCFLAGS) src/*.c
+	$(CC) $(CCFLAGS) src/*.c $(CCLIBS)
 
 install:
 	cp ssh-kc $(BASE_INSTALL)
